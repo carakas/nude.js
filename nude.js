@@ -93,9 +93,12 @@
 			}
 		};
 	})();
-	// register nude at window object
-	if(!window.nude)
-		window.nude = nude;
-	// and initialize it
-	nude.init();
+	window.onload = function ()
+	{
+		// register nude at window object
+		if(!window.nude)
+			window.nude = nude;
+		// and initialize it
+		nude.init();
+	}
 })();
