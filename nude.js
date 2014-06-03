@@ -48,7 +48,7 @@
 			var image = ctx.getImageData(0, 0, canvas.width, canvas.height),
 			imageData = image.data;
 
-			var myWorker = new Worker('worker.nude.js'),
+			var myWorker = new Worker('/core/js/nude_js/worker.nude.js'),
 			message = [imageData, canvas.width, canvas.height];
 			myWorker.postMessage(message);
 			myWorker.onmessage = function(event){
@@ -74,7 +74,7 @@
 				initCanvas();
 				// if web worker are not supported, append the noworker script
 				if(!!!window.Worker){
-					document.write(unescape("%3Cscript src='noworker.nude.js' type='text/javascript'%3E%3C/script%3E"));
+					document.write(unescape("%3Cscript src='/core/js/nude_js/noworker.nude.js' type='text/javascript'%3E%3C/script%3E"));
 				}
 					
 			},
